@@ -19,4 +19,9 @@ class Cliente extends Pessoa {
          dataDeNascimento: dataDeNascimento,
          genero: genero
        ); 
+
+       void adicionarDinheiro (double valor) {
+        dinheiro += valor;
+
+       }
 }

@@ -4,6 +4,9 @@ import 'classes/pessoa.dart';
 import 'classes/produto.dart';
 import 'classes/revendedor.dart';
 import 'utils.dart';
+import "classes/cliente.dart";
+
+
 
 /**
  * RECOMENDAÇÕES DA TUTORA
@@ -291,5 +294,19 @@ main() {
         revendedorB.falar("Olá, temos promoções!");
         revendedorC.falar("Olá, temos promoções!");
 
+//teste da classe cliente /adicionarDinheiro
+pularLinha();
+final clienteA = Cliente(
+    nome: 'Maria',
+    cpf: '12345678999',
+    genero: Genero.Feminino,
+    dataDeNascimento: DateTime.parse('1998-10-06'),
+    dinheiro: 350.0,
+);
+
+clienteA.adicionarDinheiro(1850.0);
+
+
+print(" ${clienteA.nome} possui saldo de ${clienteA.dinheiro} reais");
 
 }
