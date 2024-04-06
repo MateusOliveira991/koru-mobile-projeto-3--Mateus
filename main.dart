@@ -246,6 +246,8 @@ main() {
     dataDeNascimento: DateTime.parse('1994-01-06'),
   );
 
+  
+
   revendedorA.venderProduto(produtoA);
   print(
       "Revendedor(a): ${revendedorA.nome}, Quantidade de produtos vendidos: ${revendedorA.produtosVendidos.length}");
@@ -260,7 +262,34 @@ main() {
     dataDeNascimento: DateTime.parse('2000-08-03'),
   );
 
+
+
   revendedorB.venderProduto(produtoB);
   print(
       "Revendedor(a): ${revendedorB.nome}, Quantidade de produtos vendidos: ${revendedorB.produtosVendidos.length}");
+
+  pularLinha();
+
+  final revendedorC = Revendedor(
+    matricula: '0002',
+    nome: 'Pedro',
+    cpf: '19876543222',
+    genero: Genero.Outro,
+    dataDeNascimento: DateTime.parse('2000-09-03'),
+  );
+
+  
+
+  revendedorB.venderProduto(produtoC);
+  print(
+      "Revendedor(a): ${revendedorC.nome}, Quantidade de produtos vendidos: ${revendedorC.produtosVendidos.length}");
+
+      pularLinha();
+
+
+        revendedorA.falar("Olá, temos promoções!");
+        revendedorB.falar("Olá, temos promoções!");
+        revendedorC.falar("Olá, temos promoções!");
+
+
 }

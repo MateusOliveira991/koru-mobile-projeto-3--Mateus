@@ -15,13 +15,25 @@ class Revendedor extends Pessoa {
     required Genero genero
   }) : super(nome: nome, cpf: cpf, dataDeNascimento: dataDeNascimento, genero: genero);
 
-  @override
-  void fala(String fala) {
-    return;
+
+
+  void falar(String falar) {
+    
+    switch (genero) {
+      case Genero.Masculino:
+        print('Revendedor $nome diz: $falar');
+        break;
+      case Genero.Feminino:
+        print('Revendedora $nome diz: $falar');
+        break;
+      case Genero.Outro:
+        print('Pessoa revendedora $nome diz: $falar');
+        break;
+    }
   }
 
   void venderProduto(Produto produto) {
     produto.realizarVenda();
     this.produtosVendidos.add(produto);
-  }  
+  }
 }
