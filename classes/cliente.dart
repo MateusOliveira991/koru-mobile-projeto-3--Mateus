@@ -33,4 +33,9 @@ class Cliente extends Pessoa {
       print("$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
     };
   }
+
+   @override
+  void fala(String fala) {
+    print("Cliente $nome diz: $fala");
+  }
 }

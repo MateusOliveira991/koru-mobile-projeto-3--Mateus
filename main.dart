@@ -322,4 +322,25 @@ for(var produto in clienteA.produtosComprados) {
   print(produto.nomeProduto);
 }
 
+// Testando método da classe Cliente - fala //
+pularLinha();
+final clienteF = Cliente(
+    nome: 'Ada Lovelace',
+    cpf: '62345678999',
+    genero: Genero.Feminino,
+    dataDeNascimento: DateTime.parse('1988-10-06'),
+    dinheiro: 350,
+);
+
+  clienteF.fala("Quero comprar um produto.");
+
+  final clienteG = Cliente(
+    nome: 'Charles Babbage',
+    cpf: '62345676399',
+    genero: Genero.Masculino,
+    dataDeNascimento: DateTime.parse('1988-10-06'),
+    dinheiro: 350,
+);
+
+  clienteG.fala("Quero comprar um produto.");
 }
