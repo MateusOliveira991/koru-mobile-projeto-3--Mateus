@@ -301,12 +301,25 @@ final clienteA = Cliente(
     cpf: '12345678999',
     genero: Genero.Feminino,
     dataDeNascimento: DateTime.parse('1998-10-06'),
-    dinheiro: 350.0,
+    dinheiro: 350,
 );
 
-clienteA.adicionarDinheiro(1850.0);
+clienteA.adicionarDinheiro(200);
 
 
 print(" ${clienteA.nome} possui saldo de ${clienteA.dinheiro} reais");
+
+
+final produtoDesejado = produtoD;
+final revendedorDesejado = revendedorA;
+
+clienteA.comprarProduto(produtoDesejado, revendedorDesejado);
+pularLinha();
+
+print("${clienteA.nome} comprou os seguinte produtos:");
+
+for(var produto in clienteA.produtosComprados) {
+  print(produto.nomeProduto);
+}
 
 }
