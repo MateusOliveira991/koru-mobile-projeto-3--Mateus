@@ -26,30 +26,32 @@ class Cliente extends Pessoa {
 
   void comprarProduto(Produto produto, Revendedor revendedor) {
     if (dinheiro >= produto.valor) {
-      try{
-      revendedor.venderProduto(produto);
-      dinheiro -= produto.valor;
-      produtosComprados.add(produto);
+      try {
+        revendedor.venderProduto(produto);
+        dinheiro -= produto.valor;
+        produtosComprados.add(produto);
       } catch (e) {
         print("Erro ao comprar o produto: $e");
       }
     } else {
-      print("$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
+      print(
+          "$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
     };
   }
+
   double mediaPrecoProdutosComprados() {
-  if (produtosComprados.isEmpty) {
-    return 0.0;
-  }
-  double soma = 0.0;
-  for (var produto in produtosComprados) {
-    soma += produto.valor;
+    if (produtosComprados.isEmpty) {
+      return 0.0;
+    }
+    double soma = 0.0;
+    for (var produto in produtosComprados) {
+      soma += produto.valor;
+    }
+
+    return soma / produtosComprados.length;
   }
 
-  return soma / produtosComprados.length;
-}
-
-   @override
+  @override
   void fala(String fala) {
     print("Cliente $nome diz: $fala");
   }
