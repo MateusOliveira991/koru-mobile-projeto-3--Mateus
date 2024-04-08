@@ -26,9 +26,13 @@ class Cliente extends Pessoa {
 
   void comprarProduto(Produto produto, Revendedor revendedor) {
     if (dinheiro >= produto.valor) {
+      try{
       revendedor.venderProduto(produto);
       dinheiro -= produto.valor;
       produtosComprados.add(produto);
+      } catch (e) {
+        print("Erro ao comprar o produto: $e");
+      }
     } else {
       print("$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
     };
