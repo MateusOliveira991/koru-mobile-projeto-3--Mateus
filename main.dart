@@ -294,6 +294,12 @@ main() {
         revendedorB.falar("Olá, temos promoções!");
         revendedorC.falar("Olá, temos promoções!");
 
+
+  // Teste função calcularTotalVendido
+  pularLinha();
+  print("Revendedor: ${revendedorB.nome} \nQuantidade vendida: ${revendedorB.produtosVendidos.length}\nTotal vendido: ${revendedorB.calcularTotalVendido()}");
+  pularLinha();
+
 //teste da classe cliente /adicionarDinheiro
 pularLinha();
 final clienteA = Cliente(
