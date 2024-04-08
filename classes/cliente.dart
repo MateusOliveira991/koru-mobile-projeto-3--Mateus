@@ -37,6 +37,17 @@ class Cliente extends Pessoa {
       print("$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
     };
   }
+  double mediaPrecoProdutosComprados() {
+  if (produtosComprados.isEmpty) {
+    return 0.0;
+  }
+  double soma = 0.0;
+  for (var produto in produtosComprados) {
+    soma += produto.valor;
+  }
+
+  return soma / produtosComprados.length;
+}
 
    @override
   void fala(String fala) {
