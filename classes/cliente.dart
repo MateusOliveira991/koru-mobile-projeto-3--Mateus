@@ -51,16 +51,18 @@ class Cliente extends Pessoa {
     return soma / produtosComprados.length;
   }
 
-void verResumo() {
-  double totalGasto = 0.0;
+  void verResumo() {
+    double totalGasto = 0.0;
 
-  for (var produto in produtosComprados) {
-    totalGasto += produto.valor;
+    for (var produto in produtosComprados) {
+      totalGasto += produto.valor;
+    }
+
+    double media =
+        produtosComprados.isEmpty ? 0.0 : totalGasto / produtosComprados.length;
+    print(
+        "O total gasto por $nome foi $totalGasto reais e a média de valor dos produtos comprados é $media reais.");
   }
-
-  double media = produtosComprados.isEmpty ? 0.0 : totalGasto / produtosComprados.length;
-  print("O total gasto por $nome foi $totalGasto reais e a média de valor dos produtos comprados é $media reais.");
-}
 
   @override
   void fala(String fala) {
