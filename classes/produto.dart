@@ -22,7 +22,7 @@ class Produto {
       print('Compra do produto $nomeProduto realizada com sucesso!');
     } 
     else {
-      print('Desculpe! No momento não possuímos o produto $nomeProduto em estoque.');
+      throw Exception('No momento não possuímos o produto $nomeProduto em estoque.');
     }
   }
 
