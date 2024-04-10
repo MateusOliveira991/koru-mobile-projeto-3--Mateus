@@ -349,4 +349,39 @@ final clienteF = Cliente(
 );
 
   clienteG.fala("Quero comprar um produto.");
+
+  pularLinha();
+
+// Testando ajuste de métodos da classe Produto e Revendedor. métodos realizar venda e vender produto //
+final revendedor1 = Revendedor(
+    matricula: '17345',
+    nome: 'Maria',
+    cpf: '123.456.789-00',
+    dataDeNascimento: DateTime(1980, 4, 4),
+    genero: Genero.Feminino,
+ );
+
+ final cliente1 = Cliente(
+    nome: 'Ada Lovelace',
+    cpf: '62345678999',
+    genero: Genero.Feminino,
+    dataDeNascimento: DateTime.parse('1988-10-06'),
+    dinheiro: 300,
+);
+
+  final produto1 = Produto(
+    nomeProduto: 'LILY EAU DE PARFUM 50ml',
+    valor: 294.90,
+    qtdEmEstoque: 1,
+  );
+
+  try {
+    cliente1.comprarProduto(produto1, revendedor1);
+    print('Produtos vendidos pelo revendedor: ${revendedor1.produtosVendidos}');
+  } 
+  catch (excecao) {
+    print('Erro ao comprar o produto: $excecao');
+  }
 }
+
+
