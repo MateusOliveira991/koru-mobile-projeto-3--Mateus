@@ -350,7 +350,6 @@ final clienteF = Cliente(
 
   clienteG.fala("Quero comprar um produto.");
 
-  pularLinha();
 
 // Testando ajuste de métodos da classe Produto e Revendedor. métodos realizar venda e vender produto //
 final revendedor1 = Revendedor(
@@ -382,6 +381,21 @@ final revendedor1 = Revendedor(
   catch (excecao) {
     print('Erro ao comprar o produto: $excecao');
   }
+  
+  
+  
+  
+  
+pularLinha();
+
+double mediaProdutosA = revendedorA.calcularMediaProdutosVendidos();
+double mediaProdutosB = revendedorB.calcularMediaProdutosVendidos();
+double mediaProdutosC = revendedorC.calcularMediaProdutosVendidos();
+print('Média dos valores dos produtos vendidos por cada revendedor: \n-${revendedorA.nome}: $mediaProdutosA\n-${revendedorB.nome}: $mediaProdutosB\n-${revendedorC.nome}: $mediaProdutosC');
+
+  pularLinha();
+
+
 }
 
 
