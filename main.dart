@@ -393,7 +393,11 @@ double mediaProdutosB = revendedorB.calcularMediaProdutosVendidos();
 double mediaProdutosC = revendedorC.calcularMediaProdutosVendidos();
 print('Média dos valores dos produtos vendidos por cada revendedor: \n-${revendedorA.nome}: $mediaProdutosA\n-${revendedorB.nome}: $mediaProdutosB\n-${revendedorC.nome}: $mediaProdutosC');
 
-  pularLinha();
+pularLinha();
+revendedorA.verResumo();
+revendedorB.verResumo();
+revendedorC.verResumo();
+pularLinha();
 
 
 }
