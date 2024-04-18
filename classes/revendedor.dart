@@ -32,14 +32,14 @@ class Revendedor extends Pessoa {
     }
   }
 
- void venderProduto(Produto produto) {
-  try {
-    produto.realizarVenda();
-    this.produtosVendidos.add(produto);
-  } catch (excecao) {
-    throw excecao;
+  void venderProduto(Produto produto) {
+    try {
+      produto.realizarVenda();
+      this.produtosVendidos.add(produto);
+    } catch (excecao) {
+      throw excecao;
+    }
   }
-}
 
   double calcularTotalVendido() {
     double total = 0.0;
@@ -48,7 +48,6 @@ class Revendedor extends Pessoa {
 
     return total;
   }
-
 
   double calcularMediaProdutosVendidos() {
     double total = 0.0;
@@ -59,5 +58,20 @@ class Revendedor extends Pessoa {
     produtosVendidos.forEach((produto) => total += produto.valor);
 
     return total / produtosVendidos.length;
+  }
+
+  double calcularLucro() {
+    //Será implementado pela Cecília
+    return 20.0;
+  }
+
+  void verResumo() {
+    double totalVendido = calcularTotalVendido();
+    double media = calcularMediaProdutosVendidos();
+    double lucro = calcularLucro();
+
+    print(
+        "O total vendido por $nome foi ${totalVendido.toStringAsFixed(2)} reais e a média aritmética de valor dos produtos vendidos é ${media.toStringAsFixed(2)} reais.");
+    print("O lucro recebido foi de ${lucro.toStringAsFixed(2)} reais.");
   }
 }
