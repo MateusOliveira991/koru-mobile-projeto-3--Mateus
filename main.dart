@@ -308,11 +308,17 @@ main() {
   clienteA.comprarProduto(produtoA, revendedorA);
   pularLinha();
 
+  clienteA.verResumo();
+
   clienteA.comprarProduto(produtoB, revendedorB);
   pularLinha();
 
+    clienteA.verResumo();
+
   clienteA.comprarProduto(produtoC, revendedorC);
   pularLinha();
+
+    clienteA.verResumo();
 
   clienteA.comprarProduto(produtoD, revendedorC);
   pularLinha();

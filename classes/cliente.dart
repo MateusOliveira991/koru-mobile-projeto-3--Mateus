@@ -62,7 +62,7 @@ class Cliente extends Pessoa {
     double media =
         produtosComprados.isEmpty ? 0.0 : totalGasto / produtosComprados.length;
     print(
-        "O total gasto por $nome foi $totalGasto reais e a média de valor dos produtos comprados é $media reais.");
+        "O total gasto por $nome foi ${totalGasto.toStringAsFixed(2)} reais e a média de valor dos produtos comprados é ${media.toStringAsFixed(2)} reais.");
   }
 
   void ordenarProdutosComprados() {
