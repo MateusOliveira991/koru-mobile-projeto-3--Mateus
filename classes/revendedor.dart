@@ -61,8 +61,8 @@ class Revendedor extends Pessoa {
   }
 
   double calcularLucro() {
-    //Será implementado pela Cecília
-    return 20.0;
+    double totalVendido = calcularTotalVendido();
+    return totalVendido * porcentagemLucro;
   }
 
   void verResumo() {
