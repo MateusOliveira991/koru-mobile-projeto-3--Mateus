@@ -64,6 +64,20 @@ class Cliente extends Pessoa {
         "O total gasto por $nome foi $totalGasto reais e a média de valor dos produtos comprados é $media reais.");
   }
 
+  void verProdutosComprados() {
+  if (produtosComprados.isEmpty) {
+    print("O cliente $nome ainda não comprou nenhum produto.");
+    return;
+  }
+
+  produtosComprados.sort((a, b) => a.nomeProduto.compareTo(b.nomeProduto));
+
+  print("Produtos comprados por $nome:");
+  for (var produto in produtosComprados) {
+    print("• ${produto.nomeProduto} - ${produto.valor}");
+  }
+}
+
   @override
   void fala(String fala) {
     print("Cliente $nome diz: $fala");
