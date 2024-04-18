@@ -36,7 +36,8 @@ class Cliente extends Pessoa {
     } else {
       print(
           "$nome não possui dinheiro suficiente para comprar ${produto.nomeProduto}");
-    };
+    }
+    ;
   }
 
   double mediaPrecoProdutosComprados() {
@@ -64,19 +65,22 @@ class Cliente extends Pessoa {
         "O total gasto por $nome foi $totalGasto reais e a média de valor dos produtos comprados é $media reais.");
   }
 
+  void ordenarProdutosComprados() {
+    produtosComprados.sort((a, b) => a.nomeProduto.compareTo(b.nomeProduto));
+  }
+
   void verProdutosComprados() {
-  if (produtosComprados.isEmpty) {
-    print("O cliente $nome ainda não comprou nenhum produto.");
-    return;
-  }
+    ordenarProdutosComprados();
+    if (produtosComprados.isEmpty) {
+      print("O cliente $nome ainda não comprou nenhum produto.");
+      return;
+    }
 
-  produtosComprados.sort((a, b) => a.nomeProduto.compareTo(b.nomeProduto));
-
-  print("Produtos comprados por $nome:");
-  for (var produto in produtosComprados) {
-    print("• ${produto.nomeProduto} - ${produto.valor}");
+    print("Produtos comprados por $nome:");
+    for (var produto in produtosComprados) {
+      print("• ${produto.nomeProduto} - ${produto.valor}");
+    }
   }
-}
 
   @override
   void fala(String fala) {

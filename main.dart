@@ -6,8 +6,6 @@ import 'classes/revendedor.dart';
 import 'utils.dart';
 import "classes/cliente.dart";
 
-
-
 /**
  * RECOMENDAÇÕES DA TUTORA
  * 
@@ -249,8 +247,6 @@ main() {
     dataDeNascimento: DateTime.parse('1994-01-06'),
   );
 
-  
-
   revendedorA.venderProduto(produtoA);
   print(
       "Revendedor(a): ${revendedorA.nome}, Quantidade de produtos vendidos: ${revendedorA.produtosVendidos.length}");
@@ -264,8 +260,6 @@ main() {
     genero: Genero.Masculino,
     dataDeNascimento: DateTime.parse('2000-08-03'),
   );
-
-
 
   revendedorB.venderProduto(produtoB);
   print(
@@ -281,62 +275,64 @@ main() {
     dataDeNascimento: DateTime.parse('2000-09-03'),
   );
 
-  
-
   revendedorB.venderProduto(produtoC);
   print(
       "Revendedor(a): ${revendedorC.nome}, Quantidade de produtos vendidos: ${revendedorC.produtosVendidos.length}");
 
-      pularLinha();
+  pularLinha();
 
-
-        revendedorA.falar("Olá, temos promoções!");
-        revendedorB.falar("Olá, temos promoções!");
-        revendedorC.falar("Olá, temos promoções!");
-
+  revendedorA.falar("Olá, temos promoções!");
+  revendedorB.falar("Olá, temos promoções!");
+  revendedorC.falar("Olá, temos promoções!");
 
   // Teste função calcularTotalVendido
   pularLinha();
-  print("Revendedor: ${revendedorB.nome} \nQuantidade vendida: ${revendedorB.produtosVendidos.length}\nTotal vendido: ${revendedorB.calcularTotalVendido()}");
+  print(
+      "Revendedor: ${revendedorB.nome} \nQuantidade vendida: ${revendedorB.produtosVendidos.length}\nTotal vendido: ${revendedorB.calcularTotalVendido()}");
   pularLinha();
 
-//teste da classe cliente /adicionarDinheiro
-pularLinha();
-final clienteA = Cliente(
+  //teste da classe cliente /adicionarDinheiro
+  pularLinha();
+  final clienteA = Cliente(
     nome: 'Maria',
     cpf: '12345678999',
     genero: Genero.Feminino,
     dataDeNascimento: DateTime.parse('1998-10-06'),
     dinheiro: 350,
-);
+  );
 
-clienteA.adicionarDinheiro(200);
+  clienteA.adicionarDinheiro(1000);
 
+  print(" ${clienteA.nome} possui saldo de ${clienteA.dinheiro} reais");
 
-print(" ${clienteA.nome} possui saldo de ${clienteA.dinheiro} reais");
+  clienteA.comprarProduto(produtoA, revendedorA);
+  pularLinha();
 
+  clienteA.comprarProduto(produtoB, revendedorB);
+  pularLinha();
 
-final produtoDesejado = produtoD;
-final revendedorDesejado = revendedorA;
+  clienteA.comprarProduto(produtoC, revendedorC);
+  pularLinha();
 
-clienteA.comprarProduto(produtoDesejado, revendedorDesejado);
-pularLinha();
+  clienteA.comprarProduto(produtoD, revendedorC);
+  pularLinha();
+  pularLinha();
 
-print("${clienteA.nome} comprou os seguinte produtos:");
+  print("${clienteA.nome} comprou os seguinte produtos:");
 
-for(var produto in clienteA.produtosComprados) {
-  print(produto.nomeProduto);
-}
+  for (var produto in clienteA.produtosComprados) {
+    print(produto.nomeProduto);
+  }
 
-// Testando método da classe Cliente - fala //
-pularLinha();
-final clienteF = Cliente(
+  // Testando método da classe Cliente - fala //
+  pularLinha();
+  final clienteF = Cliente(
     nome: 'Ada Lovelace',
     cpf: '62345678999',
     genero: Genero.Feminino,
     dataDeNascimento: DateTime.parse('1988-10-06'),
     dinheiro: 350,
-);
+  );
 
   clienteF.fala("Quero comprar um produto.");
 
@@ -346,27 +342,26 @@ final clienteF = Cliente(
     genero: Genero.Masculino,
     dataDeNascimento: DateTime.parse('1988-10-06'),
     dinheiro: 350,
-);
+  );
 
   clienteG.fala("Quero comprar um produto.");
 
-
-// Testando ajuste de métodos da classe Produto e Revendedor. métodos realizar venda e vender produto //
-final revendedor1 = Revendedor(
+  // Testando ajuste de métodos da classe Produto e Revendedor. métodos realizar venda e vender produto //
+  final revendedor1 = Revendedor(
     matricula: '17345',
     nome: 'Maria',
     cpf: '123.456.789-00',
     dataDeNascimento: DateTime(1980, 4, 4),
     genero: Genero.Feminino,
- );
+  );
 
- final cliente1 = Cliente(
+  final cliente1 = Cliente(
     nome: 'Ada Lovelace',
     cpf: '62345678999',
     genero: Genero.Feminino,
     dataDeNascimento: DateTime.parse('1988-10-06'),
     dinheiro: 300,
-);
+  );
 
   final produto1 = Produto(
     nomeProduto: 'LILY EAU DE PARFUM 50ml',
@@ -377,29 +372,23 @@ final revendedor1 = Revendedor(
   try {
     cliente1.comprarProduto(produto1, revendedor1);
     print('Produtos vendidos pelo revendedor: ${revendedor1.produtosVendidos}');
-  } 
-  catch (excecao) {
+  } catch (excecao) {
     print('Erro ao comprar o produto: $excecao');
   }
-  
-  
-  
-  
-  
-pularLinha();
 
-double mediaProdutosA = revendedorA.calcularMediaProdutosVendidos();
-double mediaProdutosB = revendedorB.calcularMediaProdutosVendidos();
-double mediaProdutosC = revendedorC.calcularMediaProdutosVendidos();
-print('Média dos valores dos produtos vendidos por cada revendedor: \n-${revendedorA.nome}: $mediaProdutosA\n-${revendedorB.nome}: $mediaProdutosB\n-${revendedorC.nome}: $mediaProdutosC');
+  pularLinha();
 
-pularLinha();
-revendedorA.verResumo();
-revendedorB.verResumo();
-revendedorC.verResumo();
-pularLinha();
+  double mediaProdutosA = revendedorA.calcularMediaProdutosVendidos();
+  double mediaProdutosB = revendedorB.calcularMediaProdutosVendidos();
+  double mediaProdutosC = revendedorC.calcularMediaProdutosVendidos();
+  print(
+      'Média dos valores dos produtos vendidos por cada revendedor: \n-${revendedorA.nome}: $mediaProdutosA\n-${revendedorB.nome}: $mediaProdutosB\n-${revendedorC.nome}: $mediaProdutosC');
 
+  pularLinha();
+  revendedorA.verResumo();
+  revendedorB.verResumo();
+  revendedorC.verResumo();
+  pularLinha();
 
+  clienteA.verProdutosComprados();
 }
-
-
