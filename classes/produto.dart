@@ -20,14 +20,13 @@ class Produto {
       qtdVendida++;
       qtdEmEstoque--;
       print('Compra do produto $nomeProduto realizada com sucesso!');
-    } 
-    else {
-      throw Exception('No momento não possuímos o produto $nomeProduto em estoque.');
+    } else {
+      throw Exception(
+          'No momento não possuímos o produto $nomeProduto em estoque.');
     }
   }
 
-  double verReceitaGerada(){
-
+  double verReceitaGerada() {
     double receita = valor * qtdVendida;
     return receita;
   }
