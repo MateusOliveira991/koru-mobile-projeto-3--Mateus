@@ -7,18 +7,19 @@ class Revendedor extends Pessoa {
   List<Produto> produtosVendidos = [];
   double porcentagemLucro = 0.3;
 
-  Revendedor({
-    required this.matricula, 
-    required String nome, 
-    required String cpf, 
-    required DateTime dataDeNascimento,
-    required Genero genero
-  }) : super(nome: nome, cpf: cpf, dataDeNascimento: dataDeNascimento, genero: genero);
-
-
+  Revendedor(
+      {required this.matricula,
+      required String nome,
+      required String cpf,
+      required DateTime dataDeNascimento,
+      required Genero genero})
+      : super(
+            nome: nome,
+            cpf: cpf,
+            dataDeNascimento: dataDeNascimento,
+            genero: genero);
 
   void falar(String falar) {
-    
     switch (genero) {
       case Genero.Masculino:
         print('Revendedor $nome diz: $falar');

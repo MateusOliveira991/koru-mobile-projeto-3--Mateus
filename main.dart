@@ -33,9 +33,7 @@ import "classes/cliente.dart";
 
 main() {
   /* Declaração de objetos Produto */
-
   // Declare aqui alguns objetos do tipo Produto...
-  // Exemplo: Produto produtoA = Produto("Colônia Floratta Flores Secretas 75ml", 104.90, 3);
 
   final produtoA = Produto(
     nomeProduto: 'Kit Presente Coleção Mini Perfumaria (4 itens)',
@@ -97,6 +95,9 @@ main() {
     valor: 35.90,
     qtdEmEstoque: 50,
   );
+
+  /* Testes da classe Produto */
+
   print(produtoA);
   print(produtoB);
   print(produtoC);
@@ -108,7 +109,6 @@ main() {
   print(produtoI);
   print(produtoJ);
 
-  /* Testes da classe Produto */
   // Teste o método realizarVenda algumas vezes...
   pularLinha();
   produtoA.realizarVenda();
@@ -125,7 +125,6 @@ main() {
   // Saída esperada 2: No momento não possuímos o produto Colônia Floratta Flores Secretas 75ml em estoque.
 
   // Teste o método verReceitaGerada algumas vezes...
-  // Exemplo: print(produtoA.verReceitaGerada());
 
   pularLinha();
   print(
@@ -139,11 +138,6 @@ main() {
   /* ------------------------------------------ */
 
   /* Declaração de objetos Pessoa */
-
-  // Declare aqui alguns objetos do tipo Pessoa...
-  // Exemplo: Pessoa pessoaA = Pessoa('Maria', '12345678900', 1994);
-
-  /* Testes da classe Pessoa */
 
   final maria = Pessoa(
     nome: 'Maria',
@@ -209,6 +203,8 @@ main() {
     dataDeNascimento: DateTime.parse('2000-08-03'),
   );
 
+  /* Testes da classe Pessoa */
+
   print(maria);
   print(joao);
   print(ana);
@@ -220,18 +216,15 @@ main() {
   print(mariana);
   print(gabriel);
   pularLinha();
+
+  // Teste o método falar algumas vezes...
+  // Exemplo: pessoaA.falar('Oi, tudo bem?');
+
   maria.fala('Oi, tudo bem?');
   joao.fala('Boa tarde , Tudo bem com vocês?');
   ana.fala('Olá, Maria e João. Bom vê-los por aqui!');
 
-  // Teste o método falar algumas vezes...
-
-  // Exemplo: pessoaA.falar('Oi, tudo bem?');
-  // Saída esperada: Maria diz: Oi, tudo bem?
-
   // Teste o método maioridade algumas vezes...
-  // Exemplo: pessoaA.maioridade();
-  // Saída esperada 1: Maria tem 30 anos, portanto é maior de idade.
   maria.maioridade();
   // Saída esperada 2: João tem 14 anos, portanto é menor de idade.
   joao.maioridade();
@@ -313,12 +306,12 @@ main() {
   clienteA.comprarProduto(produtoB, revendedorB);
   pularLinha();
 
-    clienteA.verResumo();
+  clienteA.verResumo();
 
   clienteA.comprarProduto(produtoC, revendedorC);
   pularLinha();
 
-    clienteA.verResumo();
+  clienteA.verResumo();
 
   clienteA.comprarProduto(produtoD, revendedorC);
   pularLinha();

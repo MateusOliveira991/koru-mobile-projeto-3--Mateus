@@ -7,12 +7,11 @@ class Pessoa {
   final Genero genero;
   late final int idade;
 
-  Pessoa({
-    required this.nome,
-    required this.cpf,
-    required this.dataDeNascimento,
-    required this.genero
-  }) {
+  Pessoa(
+      {required this.nome,
+      required this.cpf,
+      required this.dataDeNascimento,
+      required this.genero}) {
     idade = _calcularIdade();
   }
 
@@ -22,19 +21,12 @@ class Pessoa {
     final meses = hoje.month - dataDeNascimento.month;
     final dias = hoje.day - dataDeNascimento.day;
 
-    if (meses < 0 || (meses == 0 && dias < 0)) {
-      return anos - 1;
-    } else {
-      return anos;
-    }
+    return (meses < 0 || (meses == 0 && dias < 0)) ? anos - 1 : anos;
   }
 
   void maioridade() {
-    if (idade >= 18) {
-      print('$nome tem $idade anos, portanto é maior de idade.');
-    } else {
-      print('$nome tem $idade anos, portanto é menor de idade.');
-    }
+    print(
+        '$nome tem $idade anos, portanto é ${idade >= 18 ? 'maior' : 'menor'} de idade.');
   }
 
   void fala(String fala) {
