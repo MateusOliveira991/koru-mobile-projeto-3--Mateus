@@ -241,8 +241,9 @@ main() {
   );
 
   revendedorA.venderProduto(produtoA);
+  revendedorA.venderProduto(produtoB);
   print(
-      "Revendedor(a): ${revendedorA.nome}, Quantidade de produtos vendidos: ${revendedorA.produtosVendidos.length}");
+      "Produtos vendidos pela Revendedora ${revendedorA.nome}:\n ${revendedorA.produtosVendidos}");
 
   pularLinha();
 
@@ -256,7 +257,7 @@ main() {
 
   revendedorB.venderProduto(produtoB);
   print(
-      "Revendedor(a): ${revendedorB.nome}, Quantidade de produtos vendidos: ${revendedorB.produtosVendidos.length}");
+      "Produtos vendidos pelo Revendedor ${revendedorB.nome}:\n ${revendedorB.produtosVendidos}");
 
   pularLinha();
 
@@ -268,9 +269,9 @@ main() {
     dataDeNascimento: DateTime.parse('2000-09-03'),
   );
 
-  revendedorB.venderProduto(produtoC);
+ 
   print(
-      "Revendedor(a): ${revendedorC.nome}, Quantidade de produtos vendidos: ${revendedorC.produtosVendidos.length}");
+      "Produtos vendidos pela pessoa Revendedora ${revendedorC.nome}:\n ${revendedorC.produtosVendidos}");
 
   pularLinha();
 
@@ -295,6 +296,8 @@ main() {
   );
 
   clienteA.adicionarDinheiro(1000);
+
+  clienteA.adicionarDinheiro(2000);
 
   print(" ${clienteA.nome} possui saldo de ${clienteA.dinheiro} reais");
 
@@ -382,6 +385,7 @@ main() {
   double mediaProdutosC = revendedorC.calcularMediaProdutosVendidos();
   print(
       'Média dos valores dos produtos vendidos por cada revendedor: \n-${revendedorA.nome}: $mediaProdutosA\n-${revendedorB.nome}: $mediaProdutosB\n-${revendedorC.nome}: $mediaProdutosC');
+      
 
   pularLinha();
   revendedorA.verResumo();
@@ -390,4 +394,6 @@ main() {
   pularLinha();
 
   clienteA.verProdutosComprados();
+
+  
 }
